@@ -1,0 +1,11 @@
+LIBRARY REXXCOMP INITINSTANCE
+PROTMODE
+DESCRIPTION 'REXX callable compression library- (c) Copyright Robert Mahoney 1993'
+DATA MULTIPLE NONSHARED
+STACKSIZE 32768
+EXPORTS
+     COMPRESS                 = Compress                @1
+     DECOMPRESS               = DeCompress              @2
+     LOADCOMPRESSIONFUNCS     = LoadCompressionFuncs    @3
+     UNLOADCOMPRESSIONFUNCS   = UnLoadCompressionFuncs  @4
+

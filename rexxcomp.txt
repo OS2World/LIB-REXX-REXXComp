@@ -1,0 +1,60 @@
+REXXCOMP - A REXX file compression DLL
+--------------------------------------
+ 
+  With this DLL you can compress and decompress files from REXX.
+The syntax is very simple, there are 3 functions, Compress 
+DeCompress and TestCompressedFile.   
+  
+ ----------------------------------------------------------------
+Function:  Compress                                                  
+  
+Syntax:    call Compress infilename outfilename [,mode]                
+                                                                       
+ Params:    infilename  - name of file to be compressed                
+            outfilename - name of compressed file
+            mode        - 'F' - fail if output file exists
+                         - default is overwrite
+                                                                       
+ Return:    NO_ERROR
+            SPACE_ERROR
+            MEM_ERROR
+            ZERO_LEN_FILE
+ ----------------------------------------------------------------
+ Function:  DeCompress                                                  
+                                                                        
+ Syntax:    call DeCompress infilename outfilename [,mode]              
+                                                                        
+ Params:    infilename  - name of the compressed file
+            outfilename - name of decompressed file
+            mode        - 'F' - fail if output file exists
+                         - default is overwrite
+                                                                        
+ Return:    NO_ERROR
+            SPACE_ERROR
+            MEM_ERROR
+            CRC_ERROR
+ ----------------------------------------------------------------
+ Function:  TestCompressedFile                                                    *
+
+ Syntax:    call TestCompressedFile infilename
+
+ Params:    infilename  - name of the compressed file
+
+ Return:    NO_ERROR
+            SPACE_ERROR  - shouldn't happen since outfile is nul!
+            MEM_ERROR
+            CRC_ERROR
+              
+Possible return codes from the functions:
+ NO_ERROR                 "0"
+ INPUT_FILE_OPEN_ERROR    "1"
+ OUTPUT_FILE_OPEN_ERROR   "2"
+ FILE_OPEN_ERROR          "3"
+ SPACE_ERROR              "4"
+ MEM_ERROR                "5"
+ ZERO_LEN_FILE            "6"
+ CRC_ERROR                "7"
+ SIZE_ERROR               "8"
+ UNKNOWN_ERROR            "99"
+   
+  
